@@ -11,4 +11,8 @@ class LoginBasic extends Controller
   {
     return view('content.authentications.auth-login-basic');
   }
+  public function adminIndex()
+  {
+    return view('content.authentications.auth-login-admin-basic');
+  }
 }

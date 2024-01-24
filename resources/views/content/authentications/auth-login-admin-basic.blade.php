@@ -33,11 +33,9 @@
           </div>
 
           <div class="d-flex justify-content-center flex-column gap-4">
-            <input type="text" class="form-control" placeholder="Email">
-            <input type="password" class="form-control" placeholder="Password">
+            <button type="button" class="btn btn-outline-primary" style="width: 97%"><i class="fa-solid fa-tv"></i>&nbsp Sign In with Institutional Email</button>
           </div>
-          <button class="btn btn-primary w-100 mt-3"> Sign In</button>
-          <a href="{{route('auth-register-basic')}}"><button class="btn btn-primary w-100 mt-3"> Sign Up</button></a>
+
                       
         </div>
       </div>
