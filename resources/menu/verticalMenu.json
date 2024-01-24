@@ -103,6 +103,15 @@
         "label-primary fs-tiny",
         "Pro"
       ]
+    },
+    {
+      "menuHeader": "Request"
+    },
+    {
+      "url": "/transcriptOfRecords",
+      "icon": "menu-icon tf-icons bx bx-notepad",
+      "name": "Transcript of Records",
+      "slug": "transcript-of-records"
     }
   ]
 }
