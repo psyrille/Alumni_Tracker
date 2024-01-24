@@ -40,6 +40,21 @@
       ]
     },
     {
+      "menuHeader": "Posts"
+    },
+    {
+      "url": "/",
+      "name": "Job Opportunities",
+      "icon": "menu-icon tf-icons bx bx-user",
+      "slug": "dashboard"
+    },
+    {
+      "url": "/",
+      "name": "Alumni Events",
+      "icon": "menu-icon tf-icons bx bx-video-recording",
+      "slug": "dashboard"
+    },
+    {
       "menuHeader": "Forms & Tables"
     },
     {
