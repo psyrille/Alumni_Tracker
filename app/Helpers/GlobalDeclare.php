@@ -18,6 +18,18 @@ class GlobalDeclare {
       return $out;
   }
 
+  public static function Campuses(){
+    $campuses = [
+        'SG' => ["Campus" => "Main Campus", "Icon" => "fa-cogs","Color" => "primary"],
+        'MCC' => ["Campus" => "Maasin City Campus", "Icon" => "fa-users","Color" => "danger"],
+        'TO' => ["Campus" => "Tomas Oppus Campus", "Icon" => "fa-graduation-cap","Color" => "info"],
+        'BN' => ["Campus" => "Bontoc Campus", "Icon" => "fa-ship","Color" => "primary"],
+        'SJ' => ["Campus" => "San Juan Campus", "Icon" => "fa-briefcase","Color" => "danger"],
+        'HN' => ["Campus" => "Hinunangan Campus", "Icon" => "fa-leaf","Color" => "success"],
+    ];
+    return $campuses;
+}
+
 }
 
 
