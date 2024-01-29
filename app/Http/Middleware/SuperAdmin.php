@@ -13,12 +13,12 @@ class SuperAdmin
 
         if (!auth()->check()){
             session(['autherror' => "Session expires."]);
-            return redirect()->route("login");
+            return redirect()->route("auth-login-admin-basic");
         }
 
-        if (auth()->user()->AllowSuper != 1){
+        if (strtolower(auth()->user()->type) != 'admin'){
             session(['autherror' => "You are not permitted to view the page. Please re login."]);
-            return redirect()->route("login");
+            return redirect()->route("auth-login-admin-basic");
         }
 
         return $next($request);

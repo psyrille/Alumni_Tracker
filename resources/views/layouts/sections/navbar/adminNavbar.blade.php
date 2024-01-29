@@ -90,10 +90,10 @@
                     <div class="dropdown-divider"></div>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="javascript:void(0);">
+                    <a class="dropdown-item" href="/admin/logout">
                         <i class='bx bx-power-off me-2'></i>
-                        <button class="btn btn-danger btn-sm" id="btn-logout"><span class="align-middle">Log
-                                Out</span></button>
+                        <button class="btn btn-sm btn-danger" id>Log
+                            Out</button>
                     </a>
                 </li>
             </ul>
@@ -106,4 +106,5 @@
     </div>
 @endif
 </nav>
+
 <!-- / Navbar -->
