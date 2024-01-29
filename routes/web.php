@@ -45,11 +45,25 @@ use App\Http\Controllers\form_layouts\HorizontalForm;
 use App\Http\Controllers\tables\Basic as TablesBasic;
 use App\Http\Controllers\TranscriptController;
 
+
+$controller_path = 'App\Http\Controllers';
+
 // Main Page Route
 Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
 
 //TOR
 Route::get('/transcriptOfRecords', [TranscriptController::class, 'index'])->name('transcript-of-records');
+
+// authentication
+Route::get('/auth/login-basic', [LoginBasic::class, 'index'])->name('auth-login-basic');
+Route::get('/auth/login-admin-basic', [LoginBasic::class, 'adminIndex'])->name('auth-login-admin-basic');
+Route::get('/auth/register-basic', [RegisterBasic::class, 'index'])->name('auth-register-basic');
+Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
+Route::post('auth/sso', $controller_path . '\authentications\LoginBasic@loginAdmin');
+Route::group(['prefix' => 'auth', 'middleware' =>['auth', 'admin']], function () use ($controller_path){
+    
+});
+
 
 
 // layout
@@ -66,11 +80,7 @@ Route::get('/pages/account-settings-connections', [AccountSettingsConnections::c
 Route::get('/pages/misc-error', [MiscError::class, 'index'])->name('pages-misc-error');
 Route::get('/pages/misc-under-maintenance', [MiscUnderMaintenance::class, 'index'])->name('pages-misc-under-maintenance');
 
-// authentication
-Route::get('/auth/login-basic', [LoginBasic::class, 'index'])->name('auth-login-basic');
-Route::get('/auth/login-admin-basic', [LoginBasic::class, 'adminIndex'])->name('auth-login-admin-basic');
-Route::get('/auth/register-basic', [RegisterBasic::class, 'index'])->name('auth-register-basic');
-Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
+
 
 // cards
 Route::get('/cards/basic', [CardBasic::class, 'index'])->name('cards-basic');
