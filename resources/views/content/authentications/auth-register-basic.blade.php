@@ -46,6 +46,15 @@
                                         aria-describedby="password" />
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
+                            <div class="mt-3">
+                                <label for="" class="mb-1">Select Campus</label>
+                                <select name="campus" id="" class="form-select">
+                                  <option value="0">- - Select Campus - -</option>
+                                  @foreach(GENERAL::Campuses() as $index => $campus)
+                                  <option value="{{$index}}">{{$campus['Campus']}}</option>
+                                  @endforeach
+                                </select>
+                            </div>
                             </div>
 
 
