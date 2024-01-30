@@ -65,10 +65,12 @@ Route::get('/auth/login-basic', [LoginBasic::class, 'index'])->name('auth-login-
 Route::get('/auth/login-admin-basic', [LoginBasic::class, 'adminIndex'])->name('auth-login-admin-basic');
 Route::get('/auth/register-basic', [RegisterBasic::class, 'index'])->name('auth-register-basic');
 Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
+
+Route::post('register', $controller_path . '\authentications\RegisterBasic@registerAlumni');
+
+//admin auth
 Route::post('auth/sso', $controller_path . '\authentications\LoginBasic@loginAdmin');
-Route::group(['prefix' => 'auth', 'middleware' =>['auth', 'admin']], function () use ($controller_path){
-    
-});
+
 
 
 
