@@ -28,22 +28,16 @@
           
 
           <div class="divider">
-                <div class="divider-text text-uppercase text-muted"><b> REGISTER</b>
+                <div class="divider-text text-uppercase text-muted"><b>login</b>
                 </div>
           </div>
 
           <div class="d-flex justify-content-center flex-column gap-4">
             <input type="text" class="form-control" placeholder="Student Number">
             <input type="password" class="form-control" placeholder="Password">
-            <select name="" id="" class="form-select">
-              <option value="0">- - Select Campus - -</option>
-              @foreach(GENERAL::Campuses() as $index => $campus)
-              <option value="{{$index}}">{{$campus['Campus']}}</option>
-              @endforeach
-
-            </select>
+            
           </div>
-          <button class="btn btn-primary w-100 mt-3"> LOGIN</button>
+          <button class="btn btn-primary w-100 mt-3"> Login</button>
           <button class="btn btn-primary w-100 mt-3"> Register Now</button>
                       
         </div>
