@@ -31,13 +31,10 @@
                                     <br> SIS account.</b>
                             </div>
                         </div>
-                        <hr>
-                        <div id="message"></div>
-
-                        <form id="form-register" class="mb-3">
+                        <form id="formAuthentication" class="mb-3" action="{{ url('/') }}" method="GET">
                             <div class="mb-3">
                                 <label class="form-label">Student No.</label>
-                                <input type="text" class="form-control" name="studentNo"
+                                <input type="text" class="form-control" id="username" name="username"
                                     placeholder="Enter your Student Number" autofocus>
                             </div>
 
@@ -50,11 +47,13 @@
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
                             </div>
-                        </form>
 
-                        <button class="btn btn-primary d-grid w-100" id="btn-register">
-                            Sign up
-                        </button>
+
+
+                            <button class="btn btn-primary d-grid w-100">
+                                Sign up
+                            </button>
+                        </form>
 
                         <p class="text-center">
                             <span>Already have an account?</span>

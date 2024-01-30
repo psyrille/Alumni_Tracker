@@ -70,7 +70,9 @@ Route::post('register', $controller_path . '\authentications\RegisterBasic@regis
 
 //admin auth
 Route::post('auth/sso', $controller_path . '\authentications\LoginBasic@loginAdmin');
-
+Route::group(['prefix' => 'auth', 'middleware' =>['auth', 'admin']], function () use ($controller_path){
+    
+});
 
 
 
