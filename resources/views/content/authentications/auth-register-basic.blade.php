@@ -39,7 +39,23 @@
                 <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
                 <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
               </div>
+              <div class="mb-3 mt-3">
+                <label class="form-label">Select Campus</label>
+              <select name="" id="" class="form-select">
+              <option value="0">- - Select Campus - -</option>
+              @foreach(GENERAL::Campuses() as $index => $campus)
+              <option value="{{$index}}">{{$campus['Campus']}}</option>
+              @endforeach
+
+            </select>
+              </div>
+              
             </div>
+
+            
+
+            <br>
+
 
            
  
