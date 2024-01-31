@@ -48,30 +48,35 @@ use App\Http\Controllers\TranscriptController;
 
 $controller_path = 'App\Http\Controllers';
 
-//Admin
-// Main Page Route
-Route::get('/admin/dashboard', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics')->middleware('admin');
+//Admin Main Page
+Route::get('/admin/dashboard', $controller_path . '\admin\Analytics@index')->name('dashboard-analytics')->middleware('admin');
 Route::get('/admin/logout', $controller_path . '\authentications\LoginBasic@destroy')->name('admin-logout');
 Route::group(['prefix' => 'admin', 'middleware' =>['auth', 'admin']], function () use ($controller_path){
-    
+
 });
+
+//User Main Page
+Route::get('/', $controller_path . '\user\UserDashboard@index')->name('user-dashboard-analytics')->middleware('auth');
 
 //TOR
 Route::get('/transcriptOfRecords', [TranscriptController::class, 'index'])->name('transcript-of-records');
 
 // authentication
-
 Route::get('/auth/login-basic', [LoginBasic::class, 'index'])->name('auth-login-basic');
 Route::get('/auth/login-admin-basic', [LoginBasic::class, 'adminIndex'])->name('auth-login-admin-basic');
 Route::get('/auth/register-basic', [RegisterBasic::class, 'index'])->name('auth-register-basic');
+Route::get('/auth/getInfo', [RegisterBasic::class, 'getInfo']);
+Route::get('/auth/register-edit', [RegisterBasic::class, 'registerEdit']);
 Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
 
-Route::post('register', $controller_path . '\authentications\RegisterBasic@registerAlumni');
+Route::post('/user-login', $controller_path . '\authentications\LoginBasic@login');
+Route::post('/register-alumni', $controller_path . '\authentications\RegisterBasic@registerStudent');
+Route::post('/register', $controller_path . '\authentications\RegisterBasic@registerAlumni');
 
 //admin auth
 Route::post('auth/sso', $controller_path . '\authentications\LoginBasic@loginAdmin');
 Route::group(['prefix' => 'auth', 'middleware' =>['auth', 'admin']], function () use ($controller_path){
-    
+
 });
 
 

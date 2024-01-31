@@ -50,5 +50,5 @@
 
 @section('page-script')
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="{{ asset('storage/js/admin-login.js?id=' . Illuminate\Support\Carbon::now() . '') }}"></script>
+    <script src="{{ asset('storage/js/login-admin.js?id=' . Illuminate\Support\Carbon::now() . '') }}"></script>
 @endsection
