@@ -1,7 +1,7 @@
 <?php
   // Variables
   return [
-    "creatorName" => "ThemeSelection",
+    "creatorName" => "Cyrille Ford T. Mulaan & Jake F. Tacogdoy ",
     "creatorUrl" => "https://themeselection.com",
     "templateName" => "AlmaLink",
     "templateSuffix" => "Bootstrap 5 HTML Laravel Free Admin Template",

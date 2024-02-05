@@ -54,7 +54,7 @@ class RegisterBasic extends Controller
         'Message' => 'Invalid Account'
       ]);
     }
-    
+
   }
 
   public function registerEdit(){
@@ -80,7 +80,7 @@ class RegisterBasic extends Controller
       'address' => $student->p_street.', '.Str::title($student->p_municipality).', '.Str::title($student->p_province),
       'course' => $student->course,
       'sex' => $student->Sex
-      
+
     ];
 
     return response() -> json([
@@ -106,24 +106,22 @@ class RegisterBasic extends Controller
       'type' => 'user'
     ];
 
-    
-    
-    
+
     try{
       $query = RegisterAlumni::on('mysql')
             ->insert(array($data));
-    
+
       return response() -> json([
         'status_code' => 0
-      ]); 
+      ]);
     }
     catch(Exception $e){
       return response() -> json([
         'status_code' => 1
-      ]); 
+      ]);
     }
 
 
-    
+
   }
 }

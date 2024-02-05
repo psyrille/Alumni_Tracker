@@ -1,31 +1,40 @@
 {
   "menu": [
     {
-      "url": "/",
+      "url": "/admin/dashboard",
       "name": "Dashboards",
       "icon": "menu-icon tf-icons bx bx-home-circle",
-      "slug": "user-dashboard"
+      "slug": "admin-dashboard"
     },
     {
       "menuHeader": "Posts"
     },
     {
-      "url": "/user/job-opportunities",
+      "url": "/",
       "name": "Job Opportunities",
       "icon": "menu-icon tf-icons bx bx-user",
-      "slug": "user-job-opportunities"
+      "slug": ""
     },
     {
-      "url": "/user/alumni-events",
+      "url": "/",
       "name": "Alumni Events",
       "icon": "menu-icon tf-icons bx bx-video-recording",
-      "slug": "user-alumni-events"
+      "slug": ""
+    },
+    {
+      "menuHeader": "Students"
+    },
+    {
+      "url": "/admin/pending-accounts",
+      "name": "Pending Accounts",
+      "icon": "menu-icon tf-icons bx bx-user",
+      "slug": "admin-pending-accounts"
     },
     {
       "menuHeader": "Request"
     },
     {
-      "url": "/user/transcriptOfRecords",
+      "url": "/transcriptOfRecords",
       "icon": "menu-icon tf-icons bx bx-notepad",
       "name": "Transcript of Records",
       "slug": "transcript-of-records"

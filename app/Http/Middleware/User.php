@@ -41,9 +41,13 @@ class User
 
 
 
+     try{
       if ($this->auth->user()->type !== "user" && $this->auth->user()->status !== "pending") {
-          abort(403, 'Unauthorized action.');
+        abort(403, 'Unauthorized action.');
       }
+     }catch(Exception $e){
+      return redirect('/auth/login-basic');
+     }
 
       return $next($request);
 

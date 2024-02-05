@@ -14,6 +14,9 @@ class LoginBasic extends Controller
 {
   public function index()
   {
+    if(Auth::user() != null){
+      return redirect ('/');
+    }
     return view('content.authentications.auth-login-basic');
   }
 
@@ -21,8 +24,6 @@ class LoginBasic extends Controller
     try {
 
       $this->checkTooManyFailedAttempts();
-
-
 
 
       $email = $request->email;
@@ -39,6 +40,13 @@ class LoginBasic extends Controller
       }
 
       RateLimiter::clear($this->throttleKey());
+
+      if(Auth::user()->status == 'disapproved'){
+        return response() -> json([
+          'status_code' => 2,
+          'Message' => "Your account has been disapproved."
+        ]);
+      }
 
       return response() -> json([
         'status_code' => 0
@@ -101,7 +109,8 @@ class LoginBasic extends Controller
     }
 
     Auth::login($checkType);
-    $url = "student";
+    $url = "/user";
+
 
     if($checkType->type == 'admin'){
 
@@ -123,4 +132,13 @@ class LoginBasic extends Controller
         Auth::logout();
         return redirect('/auth/login-admin-basic');
     }
+
+  public function userDestroy(){
+
+
+      Auth::guard('web')->logout();
+      Auth::logout();
+      return redirect('/auth/login-basic');
+
+  }
 }

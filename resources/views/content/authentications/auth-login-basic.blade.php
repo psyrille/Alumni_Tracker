@@ -41,11 +41,18 @@
                         <form id="formLogin">
                             <div class="d-flex justify-content-center flex-column gap-4">
                                 <input type="email" class="form-control" name="email" placeholder="Email">
-                                <input type="password" class="form-control" name="password" placeholder="Password">
+                                <div class="mb-3 form-password-toggle">
+                                    <div class="input-group input-group-merge">
+                                        <input type="password" id="password" class="form-control" name="password"
+                                            placeholder="Password" aria-describedby="password" />
+                                        <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                    </div>
+                                </div>
 
                             </div>
+                            <button type="submit" class="btn btn-primary w-100 mt-3"> Login</button>
                         </form>
-                        <button class="btn btn-primary w-100 mt-3" id="btn-login"> Login</button>
+
                         <a href="/auth/register-basic"><button class="btn btn-primary w-100 mt-3"> Register Now</button></a>
 
                     </div>

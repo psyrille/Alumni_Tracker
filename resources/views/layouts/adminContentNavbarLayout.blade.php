@@ -22,7 +22,7 @@
         <div class="layout-container">
 
             @if ($isMenu)
-                @include('layouts/sections/menu/verticalMenu')
+                @include('layouts/sections/menu/adminVerticalMenu')
             @endif
 
 

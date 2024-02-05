@@ -53,7 +53,7 @@
                             <input type="text" class="form-control mb-2" id="course" name="course"
                                 placeholder="Course">
                             <input type="text" class="form-control mb-2" id="year-grad" name="yearGrad"
-                                placeholder="Year Graduated">
+                                placeholder="Year Graduated" required>
                             <input type="number" class="form-control mb-2" id="contact-no" name="contactNo"
                                 placeholder="Contact No.">
                             <input type="text" class="form-control mb-2" id="fb-acc" name="fbAcc"
