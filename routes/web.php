@@ -7,7 +7,7 @@ use App\Http\Controllers\authentications\ForgotPasswordBasic;
 $controller_path = 'App\Http\Controllers';
 
 //Admin Main Page
-Route::get('/admin/dashboard', $controller_path . '\admin\AdminDashboard@index')->name('admin-dashboard')->middleware('admin');
+Route::get('/admin/dashboard', $controller_path . '\admin\AdminDashboard@index');
 Route::get('/admin/logout', $controller_path . '\authentications\LoginBasic@destroy')->name('admin-logout');
 Route::group(['prefix' => 'admin', 'middleware' =>['auth', 'admin']], function () use ($controller_path){
   Route::get('/pending-accounts', $controller_path . '\admin\Accounts@index')->name('admin-pending-accounts');
