@@ -42,19 +42,25 @@ class Profile extends Controller
     }
 
     public function editAbout(Request $req){
-      $data = [
-        'year' => $req->editYearGraduated,
-        'address' => $req->editAddress
-      ];
+      $address = $req->editAddress;
+
+      User::where('id', Auth::id())->update([
+        'address' => $address
+      ]);
 
       try{
-        User::where('id', Auth::id())->update(array($data));
+
 
         return response()->json([
-
+          'status_code' => 0,
+          'Message' => "Changes are successfully saved"
         ]);
       }catch(Exception $e){
 
       }
     }
+
+
+
+
 }

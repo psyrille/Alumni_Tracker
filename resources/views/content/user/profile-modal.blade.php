@@ -71,17 +71,19 @@
                              <span><b>Course</b>: {{ Auth::user()->course }}</span>
                          </li>
                          <li class="list-group-item">
-                             <div class="d-flex align-items-center gap-3">
-                                 <span><b>Year Graduated</b>:</span>
-                                 <input type="text" name="editYearGraduated" class="form-control form-control-sm"
-                                     style="width: 50%" value="{{ Auth::user()->yearGrad }}">
-                             </div>
+                             <span><b>Course</b>: {{ Auth::user()->yearGrad }}</span>
                          </li>
                          <li class="list-group-item">
                              <div class="d-flex align-items-center gap-3">
                                  <span><b>Address</b>:</span>
-                                 <input type="text" name="editAddress" class="form-control form-control-sm"
-                                     style="width: 50%" value="{{ Auth::user()->address }}">
+                                 <select name="" id="select-region" class="form-select form-select-sm">
+                                     @foreach (GENERAL::Region() as $region)
+                                         <option value="{{ $region->regCode }}">{{ $region->regDesc }}</option>
+                                     @endforeach
+                                 </select>
+                                 <select name="" id="select-province" class="form-select form-select-sm">
+
+                                 </select>
                              </div>
                          </li>
                      </ul>

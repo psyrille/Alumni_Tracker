@@ -13,6 +13,7 @@ Route::group(['prefix' => 'admin', 'middleware' =>['auth', 'admin']], function (
   Route::get('/pending-accounts', $controller_path . '\admin\Accounts@index')->name('admin-pending-accounts');
   Route::post('/approve-account', $controller_path . '\admin\Accounts@approveAccount');
   Route::post('/disapprove-account', $controller_path . '\admin\Accounts@disapproveAccount');
+
 });
 
 
@@ -39,6 +40,7 @@ Route::get('/user/transcriptOfRecords', $controller_path.'\user\Transcript@index
 Route::group(['prefix' => 'user', 'middleware' =>['auth', 'user']], function () use ($controller_path){
   Route::post('/addWork', $controller_path . '\user\Profile@addWork');
   Route::post('/editProfileAbout', $controller_path . '\user\Profile@editAbout');
+  Route::post('/region', $controller_path . '\Address@region');
 });
 
 
