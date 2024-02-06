@@ -48,7 +48,8 @@
                                         <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                     </div>
                                 </div>
-
+                            </div>
+                            <div class="d-flex flex-row-reverse"><a href="/auth/forgot-password-basic">Forget Password?</a>
                             </div>
                             <button type="submit" class="btn btn-primary w-100 mt-3"> Login</button>
                         </form>

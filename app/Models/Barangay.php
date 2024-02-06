@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Barangay extends Model
 {
-  protected $table = 'refregion';
+  protected $table = 'refbrgy';
   protected $fillable = [
     'id', 'brgyCode', 'brgyDesc', 'regCode', 'provCode', 'citymunCode'
   ];
