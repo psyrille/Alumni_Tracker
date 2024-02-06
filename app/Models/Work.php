@@ -9,6 +9,6 @@ class Work extends Model
 {
     protected $table = 'work';
     protected $fillable = [
-      'id', 'user_id', 'year', 'name', 'address', 'company_name' ,'company_contact'
+      'id', 'user_id', 'year', 'name', 'country','region','province', 'municipality', 'barangay', 'company_name' ,'company_contact'
     ];
 }

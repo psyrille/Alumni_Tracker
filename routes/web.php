@@ -7,7 +7,7 @@ use App\Http\Controllers\authentications\ForgotPasswordBasic;
 $controller_path = 'App\Http\Controllers';
 
 //Admin Main Page
-Route::get('/admin/dashboard', $controller_path . '\admin\AdminDashboard@index');
+Route::get('/admin/dashboard', $controller_path . '\admin\AdminDashboard@index');//wanay middleware
 Route::get('/admin/logout', $controller_path . '\authentications\LoginBasic@destroy')->name('admin-logout');
 Route::group(['prefix' => 'admin', 'middleware' =>['auth', 'admin']], function () use ($controller_path){
   Route::get('/pending-accounts', $controller_path . '\admin\Accounts@index')->name('admin-pending-accounts');
@@ -40,7 +40,12 @@ Route::get('/user/transcriptOfRecords', $controller_path.'\user\Transcript@index
 Route::group(['prefix' => 'user', 'middleware' =>['auth', 'user']], function () use ($controller_path){
   Route::post('/addWork', $controller_path . '\user\Profile@addWork');
   Route::post('/editProfileAbout', $controller_path . '\user\Profile@editAbout');
+  Route::post('/editProfileContact', $controller_path . '\user\Profile@editContact');
+  Route::post('/editProfileAccount', $controller_path . '\user\Profile@editAccount');
+  Route::post('/deleteWork', $controller_path . '\user\Profile@deleteWork');
   Route::post('/region', $controller_path . '\Address@region');
+  Route::post('/municipality', $controller_path . '\Address@municipality');
+  Route::post('/barangay', $controller_path . '\Address@barangay');
 });
 
 
@@ -62,7 +67,7 @@ Route::get('/auth/login-admin-basic', $controller_path . '\authentications\Login
 Route::get('/auth/register-basic', $controller_path . '\authentications\RegisterBasic@index')->name('auth-register-basic');
 Route::get('/auth/getInfo', $controller_path . '\authentications\RegisterBasic@getInfo');
 Route::get('/auth/register-edit', $controller_path . '\authentications\RegisterBasic@registerEdit');
-Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
+Route::get('/auth/forgot-password-basic', $controller_path . '\authentications\ForgotPasswordBasic@index')->name('auth-reset-password-basic');
 
 Route::post('/user-login', $controller_path . '\authentications\LoginBasic@login');
 Route::post('/register-alumni', $controller_path . '\authentications\RegisterBasic@registerStudent');
